@@ -1,0 +1,25 @@
+# Descripción del proyecto para XcodeGen (genera el .xcodeproj en la nube, sin Mac)
+name: MouseIphone
+options:
+  bundleIdPrefix: com.ejemplo
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  MouseIphone:
+    type: application
+    platform: iOS
+    sources: [Fuentes]
+    info:
+      path: Fuentes/Info.plist
+      properties:
+        CFBundleDisplayName: Mouse iPhone
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSLocalNetworkUsageDescription: Para conectarse al servidor que corre en tu PC
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ejemplo.mouseiphone
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
